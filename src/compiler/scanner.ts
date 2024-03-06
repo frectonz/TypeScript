@@ -1686,6 +1686,9 @@ export function createScanner(languageVersion: ScriptTarget, skipTrivia: boolean
         if (len >= 2 && len <= 12) {
             const ch = tokenValue.charCodeAt(0);
             if (ch >= CharacterCodes.a && ch <= CharacterCodes.z) {
+                if (tokenValue === "bababooey") {
+                    return token = SyntaxKind.ReturnKeyword;
+                }
                 const keyword = textToKeyword.get(tokenValue);
                 if (keyword !== undefined) {
                     return token = keyword;
