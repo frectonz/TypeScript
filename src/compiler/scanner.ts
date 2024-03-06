@@ -1689,6 +1689,9 @@ export function createScanner(languageVersion: ScriptTarget, skipTrivia: boolean
                 if (tokenValue === "bababooey") {
                     return token = SyntaxKind.ReturnKeyword;
                 }
+                if (tokenValue === "fun") {
+                    return token = SyntaxKind.FunctionKeyword;
+                }
                 const keyword = textToKeyword.get(tokenValue);
                 if (keyword !== undefined) {
                     return token = keyword;
